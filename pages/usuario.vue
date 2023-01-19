@@ -1,22 +1,22 @@
 <template>
-  <div class="main-container">
+  <div>
     <Menu/>
-    <h1>INDEX</h1>
+    <h1>Usuario</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Index',
+  name: 'Usuario',
   head: {
-    title: 'Oráculo Gratis',
+    title: 'Usuario - Oráculo Gratis',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
         hid: 'description',
         name: 'description',
-        content: 'El oráculo gratis más fiable de internet.'
+        content: 'Descubre tus estadísticas sobre el uso de oraculogratis.net.'
       }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
@@ -24,17 +24,6 @@ export default {
 }
 </script>
 
-<style>
-body {
-  margin: 0;
-  background-color: #2c2c32;
-  font-family: 'Roboto', sans-serif;
-  color: #ffffff;
-  padding: 10px;
-}
+<style scoped>
 
-a {
-  text-decoration: none;
-  color: #ffffff;
-}
 </style>

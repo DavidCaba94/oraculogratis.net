@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Menu :page="2"/>
+    <Menu/>
     <h1>Oráculo si o no</h1>
   </div>
 </template>
@@ -10,6 +10,9 @@ export default {
   name: 'OraculoSiNo',
   head: {
     title: 'Oráculo Si o No - Oráculo Gratis',
+    htmlAttrs: {
+      lang: 'es'
+    },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -19,11 +22,26 @@ export default {
         content: 'El oráculo del si o no gratis más fiable de internet.'
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/icon.ico' }]
   }
 }
 </script>
 
-<style scoped>
+<style>
+body {
+  margin: 0;
+  background-color: #2c2c32;
+  font-family: 'Roboto', sans-serif;
+  color: #ffffff;
+  padding: 10px;
+}
 
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+h1 {
+  text-align: center;
+}
 </style>

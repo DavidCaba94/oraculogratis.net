@@ -1,7 +1,7 @@
 <template>
   <div class="main-container">
     <Menu/>
-    <h1>INDEX</h1>
+    <h1>Oráculo Gratis</h1>
   </div>
 </template>
 
@@ -19,7 +19,7 @@ export default {
         content: 'El oráculo gratis más fiable de internet.'
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/icon.ico' }]
   }
 }
 </script>
@@ -36,5 +36,9 @@ body {
 a {
   text-decoration: none;
   color: #ffffff;
+}
+
+h1 {
+  text-align: center;
 }
 </style>

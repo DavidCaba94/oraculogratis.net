@@ -214,30 +214,6 @@ a {
 }
 
 /*ANIMACIÓN MENU*/
-.menu-item:hover {
-	color: #924abf;
-}
-
-.menu-item:before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 1px;
-  bottom: 0;
-  left: 0;
-  background: #924abf;
-  visibility: hidden;
-  border-radius: 5px;
-  transform: scaleX(0);
-  transition: .25s linear;
-}
-
-.menu-item:hover:before,
-.menu-item:focus:before {
-  visibility: visible;
-  transform: scaleX(1);
-}
-
 .hamburger-menu {
   margin-top: -20px;
   margin-right: 10px;

@@ -31,7 +31,9 @@
           <option value="Tauro">Tauro</option>
           <option value="Virgo">Virgo</option>
         </select>
-        <div class="btn-login" @click="registrarUsuario()">Registrarme</div>
+        <div class="btn-login" @click="registrarUsuario()" v-if="!loading">Registrarme</div>
+        <div class="lds-ellipsis" v-if="loading"><div></div><div></div><div></div><div></div></div>
+        <div class="error-log" v-if="errorLog !== null">{{ errorLog }}</div>
       </div>
     </div>
   </div>
@@ -67,13 +69,38 @@ export default {
         nombre: null,
         apellidos: null,
         signo: null
-      }
+      },
+      loading: false,
+      errorLog: null
     }
   },
   methods: {
     async registrarUsuario() {
-      console.log(this.user);
-      await userService.registrarUsuario(this.user);
+      this.errorLog = null;
+      this.loading = true;
+      if (await this.correoValido()) {
+        if (this.user.email !== null && this.user.pass !== null && this.user.pass2 !== null && this.user.nombre !== null && this.user.apellidos !== null &&this.user.signo !== null) {
+          if (this.user.pass === this.user.pass2) {
+            let success = await userService.registrarUsuario(this.user);
+            if (success) {this.$router.push({path: '/bienvenido'});}
+          } else {
+            this.errorLog = 'Las contraseñas no coinciden'
+          }
+        } else {
+          this.errorLog = 'Todos los campos son obligatorios'
+        }
+      } else {
+        this.errorLog = 'El correo introducido ya existe'
+      }
+      this.loading = false;
+    },
+    async correoValido() {
+      let correoDisponible = true;
+      let user = await userService.getUserByEmail(this.user);
+      if (user !== null) {
+        correoDisponible = false;
+      }
+      return correoDisponible;
     }
   }
 }
@@ -153,6 +180,10 @@ h1 {
   outline: none;
 }
 
+option {
+  color: #2c2c32;
+}
+
 .btn-login {
   width: 120px;
   margin: 0 auto;
@@ -165,9 +196,74 @@ h1 {
   cursor: pointer;
 }
 
+.error-log {
+  max-width: 250px;
+  margin: 5px auto;
+  line-height: 20px;
+  color: #ff7575;
+}
+
 @media (max-width: 950px) {
   .login-container {
     margin-top: 0px;
   }
+}
+
+
+/* LOADER */
+.lds-ellipsis {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 30px;
+    margin-top: 10px;
+}
+.lds-ellipsis div {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgb(255, 255, 255);
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+    left: 8px;
+    animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+    left: 8px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+    left: 32px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+    left: 56px;
+    animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes lds-ellipsis3 {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+@keyframes lds-ellipsis2 {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(24px, 0);
+    }
 }
 </style>

@@ -16,10 +16,20 @@ export default {
     }).then(response =>{
       if(response.status == 200){
         successReg = true;
-      } else {
-        console.log('error');
       }
     });
     return successReg;
+  },
+  async getUserByEmail(form) {
+    let finalUser = null;
+    await axios.post(url, {
+      opcion:2,
+      email: form.email
+    }).then(response =>{
+      if(response.status == 200 && response.data.length > 0){
+        finalUser = response.data[0];
+      }
+    });
+    return finalUser;
   }
 }

@@ -19,8 +19,11 @@
       <NuxtLink to="/oraculo-de-cartas">
         <div :class="getActiveMenuItem('oraculo-de-cartas')">Oráculo de cartas</div>
       </NuxtLink>
-      <NuxtLink to="/usuario">
+      <NuxtLink to="/usuario" v-if="!userLogged">
         <div class="btn-login">Iniciar sesión</div>
+      </NuxtLink>
+      <NuxtLink to="/usuario" v-if="userLogged">
+        <div class="btn-usuario" ref="user"></div>
       </NuxtLink>
     </div>
     <div class="mobile-menu-container">

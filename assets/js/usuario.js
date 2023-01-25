@@ -31,5 +31,18 @@ export default {
       }
     });
     return finalUser;
+  },
+  async getUserByLogin(form) {
+    let finalUser = null;
+    await axios.post(url, {
+      opcion:3,
+      email: form.email,
+      pass: form.pass
+    }).then(response =>{
+      if(response.status == 200 && response.data.length > 0){
+        finalUser = response.data[0];
+      }
+    });
+    return finalUser;
   }
 }

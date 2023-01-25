@@ -45,6 +45,12 @@ switch($opcion){
         $resultado->execute();
         $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
         break;
+    case 3:
+        $consulta = "SELECT * FROM users WHERE email = '$email' AND pass = '$pass'";
+        $resultado = $conexion->prepare($consulta);
+        $resultado->execute();
+        $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
+        break;
 }
 print json_encode($data, JSON_UNESCAPED_UNICODE);
 $conexion = NULL;

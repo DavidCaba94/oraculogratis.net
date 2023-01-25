@@ -20,10 +20,10 @@
         <div :class="getActiveMenuItem('oraculo-de-cartas')">Oráculo de cartas</div>
       </NuxtLink>
       <NuxtLink to="/usuario" v-if="!userLogged">
-        <div class="btn-login">Iniciar sesión</div>
+        <div class="btn-login-menu">Iniciar sesión</div>
       </NuxtLink>
       <NuxtLink to="/usuario" v-if="userLogged">
-        <div class="btn-usuario" ref="user"></div>
+        <div class="btn-usuario" :style="{ backgroundImage: `url('${imagePath}')` }"></div>
       </NuxtLink>
     </div>
     <div class="mobile-menu-container">
@@ -31,10 +31,10 @@
         <div class="bar" ref="bar"></div>
       </div>
       <NuxtLink to="/usuario" v-if="!userLogged">
-        <div class="btn-login">Iniciar sesión</div>
+        <div class="btn-login-menu">Iniciar sesión</div>
       </NuxtLink>
       <NuxtLink to="/usuario" v-if="userLogged">
-        <div class="btn-usuario" ref="user"></div>
+        <div class="btn-usuario" :style="{ backgroundImage: `url('${imagePath}')` }"></div>
       </NuxtLink>
     </div>
     <div :class="mobileMenuClass">
@@ -61,13 +61,26 @@
 </template>
 
 <script>
+import Acuario from '../assets/img/signos/acuario.png';
+import Aries from '../assets/img/signos/aries.png';
+import Cancer from '../assets/img/signos/cancer.png';
+import Capricornio from '../assets/img/signos/capricornio.png';
+import Escorpio from '../assets/img/signos/escorpio.png';
+import Geminis from '../assets/img/signos/geminis.png';
+import Leo from '../assets/img/signos/leo.png';
+import Libra from '../assets/img/signos/libra.png';
+import Piscis from '../assets/img/signos/piscis.png';
+import Sagitario from '../assets/img/signos/sagitario.png';
+import Tauro from '../assets/img/signos/tauro.png';
+import Virgo from '../assets/img/signos/virgo.png';
 export default {
   name: 'Menu',
   data() {
     return {
       isMenuShow: false,
       mobileMenuClass: 'mobile-items-container-hide',
-      userLogged: true
+      userLogged: false,
+      imagePath: '../assets/img/signos/acuario.png'
     }
   },
   mounted() {
@@ -100,7 +113,51 @@ export default {
       this.isMenuShow = !this.isMenuShow;
     },
     checkUser() {
-      this.userLogged = true;
+      if (localStorage.getItem('user')) {
+        this.userLogged = true;
+        this.getUserData();
+      }
+    },
+    getUserData() {
+      let signo = JSON.parse(localStorage.getItem('user')).signo;
+      switch (signo) {
+        case 'Acuario':
+          this.imagePath = Acuario
+          break;
+        case 'Aries':
+          this.imagePath = Aries
+          break;
+        case 'Cáncer':
+          this.imagePath = Cancer
+          break;
+        case 'Capricornio':
+          this.imagePath = Capricornio
+          break;
+        case 'Escorpio':
+          this.imagePath = Escorpio
+          break;
+        case 'Géminis':
+          this.imagePath = Geminis
+          break;
+        case 'Leo':
+          this.imagePath = Leo
+          break;
+        case 'Libra':
+          this.imagePath = Libra
+          break;
+        case 'Piscis':
+          this.imagePath = Piscis
+          break;
+        case 'Sagitario':
+          this.imagePath = Sagitario
+          break;
+        case 'Tauro':
+          this.imagePath = Tauro
+          break;
+        case 'Virgo':
+          this.imagePath = Virgo
+          break;
+      }
     }
   }
 }
@@ -174,7 +231,7 @@ a {
   width: 30px;
 }
 
-.btn-login {
+.btn-login-menu {
   padding: 7px;
   border: 1px solid transparent;
   border-image: linear-gradient(0.25turn, rgb(138, 17, 219), rgb(39, 216, 223), rgb(53, 230, 171));
@@ -185,7 +242,7 @@ a {
   width: 30px;
   height: 30px;
   padding: 7px;
-  background-image: url('../assets/img/signos/capricornio.png');
+  background-image: url('../assets/img/signos/acuario.png');
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;

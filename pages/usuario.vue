@@ -21,6 +21,48 @@
     </div>
     <div v-if="userLogged">
       <p class="user-name">{{userData.nombre}} {{userData.apellidos}}</p>
+      <div class="box-grafica">
+        <p class="titulo-grafica">Este es el uso que has hecho de todos los oráculos</p>
+        <div class="box-bars">
+          <div class="bar-column">
+            <div class="grafica-sino" :style="{ height: `${chartData.sino * 2}px` }"></div>
+          </div>
+          <div class="bar-column">
+            <div class="grafica-amor" :style="{ height: `${chartData.amor * 2}px` }"></div>
+          </div>
+          <div class="bar-column">
+            <div class="grafica-nombres" :style="{ height: `${chartData.nombres * 2}px` }"></div>
+          </div>
+          <div class="bar-column">
+            <div class="grafica-signos" :style="{ height: `${chartData.signos * 2}px` }"></div>
+          </div>
+          <div class="bar-column">
+            <div class="grafica-cartas" :style="{ height: `${chartData.cartas * 2}px` }"></div>
+          </div>
+        </div>
+        <div class="box-names">
+          <div class="bar-column">
+            <div class="numero-bar">{{statsData.sino}}</div>
+            <div class="texto-bar">Si o no</div>
+          </div>
+          <div class="bar-column">
+            <div class="numero-bar">{{statsData.amor}}</div>
+            <div class="texto-bar">Amor</div>
+          </div>
+          <div class="bar-column">
+            <div class="numero-bar">{{statsData.nombres}}</div>
+            <div class="texto-bar">Nombres</div>
+          </div>
+          <div class="bar-column">
+            <div class="numero-bar">{{statsData.signos}}</div>
+            <div class="texto-bar">Signos</div>
+          </div>
+          <div class="bar-column">
+            <div class="numero-bar">{{statsData.cartas}}</div>
+            <div class="texto-bar">Cartas</div>
+          </div>
+        </div>
+      </div>
       <div class="btn-logout" @click="cerrarSesion()">Cerrar Sesión</div>
     </div>
   </div>
@@ -28,6 +70,7 @@
 
 <script>
 import userService from '../assets/js/usuario.js';
+import statsService from '../assets/js/stats.js';
 
 export default {
   name: 'Usuario',
@@ -63,6 +106,20 @@ export default {
         email: null,
         pass: null,
         signo: null
+      },
+      statsData: {
+        sino: 0,
+        amor: 0,
+        nombres: 0,
+        signos: 0,
+        cartas: 0
+      },
+      chartData: {
+        sino: 0,
+        amor: 0,
+        nombres: 0,
+        signos: 0,
+        cartas: 0
       }
     }
   },
@@ -96,6 +153,24 @@ export default {
       this.$set(this.userData, 'email', JSON.parse(localStorage.getItem('user')).email);
       this.$set(this.userData, 'pass', JSON.parse(localStorage.getItem('user')).pass);
       this.$set(this.userData, 'signo', JSON.parse(localStorage.getItem('user')).signo);
+      this.getStatsData();
+    },
+    async getStatsData() {
+      let stats = await statsService.getAllStatsByUserId(this.userData.id);
+      this.$set(this.statsData, 'sino', stats.sino);
+      this.$set(this.statsData, 'amor', stats.amor);
+      this.$set(this.statsData, 'nombres', stats.nombres);
+      this.$set(this.statsData, 'signos', stats.signos);
+      this.$set(this.statsData, 'cartas', stats.cartas);
+      this.setChartValues();
+    },
+    setChartValues() {
+      let sum = parseInt(this.statsData.sino) + parseInt(this.statsData.amor) + parseInt(this.statsData.nombres) + parseInt(this.statsData.signos) + parseInt(this.statsData.cartas);
+      this.chartData.sino = 100 * this.statsData.sino / sum;
+      this.chartData.amor = 100 * this.statsData.amor / sum;
+      this.chartData.nombres = 100 * this.statsData.nombres / sum;
+      this.chartData.signos = 100 * this.statsData.signos / sum;
+      this.chartData.cartas = 100 * this.statsData.cartas / sum;
     },
     cerrarSesion() {
       localStorage.removeItem('user');
@@ -207,6 +282,91 @@ h1 {
   text-align: center;
   font-size: 20px;
   font-weight: 700;
+}
+
+.box-grafica {
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.box-bars {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-wrap: nowrap;
+  height: 230px;
+  border-bottom: 1px solid #ffffff;
+  background-color: #3e3e48;
+}
+
+.box-names {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-wrap: nowrap;
+  height: 45px;
+}
+
+.bar-column {
+  width: 20%;
+}
+
+.grafica-sino {
+  width: 60%;
+  margin: 0 auto;
+  background-color: #c77cdd;
+  padding: 1px;
+  border-radius: 5px 5px 0px 0px;
+}
+
+.grafica-amor {
+  width: 60%;
+  margin: 0 auto;
+  background-color: #ddd37c;
+  padding: 1px;
+  border-radius: 5px 5px 0px 0px;
+}
+
+.grafica-nombres {
+  width: 60%;
+  margin: 0 auto;
+  background-color: #7cb1dd;
+  padding: 1px;
+  border-radius: 5px 5px 0px 0px;
+}
+
+.grafica-signos {
+  width: 60%;
+  margin: 0 auto;
+  background-color: #7cdd84;
+  padding: 1px;
+  border-radius: 5px 5px 0px 0px;
+}
+
+.grafica-cartas {
+  width: 60%;
+  margin: 0 auto;
+  background-color: #dd7c7c;
+  padding: 1px;
+  border-radius: 5px 5px 0px 0px;
+}
+
+.numero-bar {
+  text-align: center;
+  font-weight: 700;
+}
+
+.texto-bar {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 300;
+  margin-top: 5px;
+}
+
+.titulo-grafica {
+  text-align: center;
 }
 
 @media (max-width: 950px) {

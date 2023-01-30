@@ -57,6 +57,16 @@ switch($opcion){
         $resultado->execute();
         $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
         break;
+    case 5:
+        $consulta = "UPDATE users SET pass='$pass' WHERE id='$id'";	
+        $resultado = $conexion->prepare($consulta);
+        $resultado->execute();                
+        break;
+    case 6:
+        $consulta = "UPDATE users SET nombre='$nombre', apellidos='$apellidos', email='$email', signo='$signo' WHERE id='$id'";	
+        $resultado = $conexion->prepare($consulta);
+        $resultado->execute();                
+        break;
 }
 print json_encode($data, JSON_UNESCAPED_UNICODE);
 $conexion = NULL;

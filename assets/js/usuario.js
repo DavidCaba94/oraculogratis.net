@@ -55,5 +55,34 @@ export default {
       }
     });
     return idUser;
+  },
+  async updatePassUsuario(id, pass) {
+    let successUpdate = false;
+    await axios.post(url, {
+      opcion:5, 
+      id: id,
+      pass: pass
+    }).then(response =>{
+      if(response.status == 200){
+        successUpdate = true;
+      }
+    });
+    return successUpdate;
+  },
+  async updateDataUsuario(form) {
+    let successUpdate = false;
+    await axios.post(url, {
+      opcion:6, 
+      id: form.id,
+      email: form.email,
+      nombre: form.nombre,
+      apellidos: form.apellidos,
+      signo: form.signo
+    }).then(response =>{
+      if(response.status == 200){
+        successUpdate = true;
+      }
+    });
+    return successUpdate;
   }
 }

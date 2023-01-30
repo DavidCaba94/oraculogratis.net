@@ -63,6 +63,41 @@
           </div>
         </div>
       </div>
+      <div class="box-login">
+        <p class="data-title">Tus datos</p>
+        <p class="login-label">Nombre</p>
+        <input type="text" class="input-login" v-model="userData.nombre">
+        <p class="login-label">Apellidos</p>
+        <input type="text" class="input-login" v-model="userData.apellidos">
+        <p class="login-label">Email</p>
+        <input type="email" class="input-login" v-model="userData.email">
+        <p class="login-label">Signo</p>
+        <select name="select" class="select-login" v-model="userData.signo">
+          <option value="Acuario" selected>Acuario</option>
+          <option value="Aries">Aries</option>
+          <option value="Cáncer">Cáncer</option>
+          <option value="Capricornio">Capricornio</option>
+          <option value="Escorpio">Escorpio</option>
+          <option value="Géminis">Géminis</option>
+          <option value="Leo">Leo</option>
+          <option value="Libra">Libra</option>
+          <option value="Piscis">Piscis</option>
+          <option value="Sagitario">Sagitario</option>
+          <option value="Tauro">Tauro</option>
+          <option value="Virgo">Virgo</option>
+        </select>
+        <div class="btn-login" @click="updateUser()">Actualizar</div>
+        <p class="success-log" v-if="successData">Datos actualizados correctamente</p>
+        <div class="error-log" v-if="errorData">Todos los campos son obligatorios</div>
+      </div>
+      <div class="box-login">
+        <p class="data-title">Cambiar contraseña</p>
+        <p class="login-label">Nueva contraseña</p>
+        <input type="password" class="input-login" v-model="newPass">
+        <div class="btn-login" @click="changePassword()">Actualizar</div>
+        <p class="success-log" v-if="successPass">Contraseña actualizada correctamente</p>
+        <div class="error-log" v-if="errorPass">Todos los campos son obligatorios</div>
+      </div>
       <div class="btn-logout" @click="cerrarSesion()">Cerrar Sesión</div>
     </div>
   </div>
@@ -120,7 +155,12 @@ export default {
         nombres: 0,
         signos: 0,
         cartas: 0
-      }
+      },
+      newPass: null,
+      successPass: false,
+      errorPass: false,
+      successData: false,
+      errorData: false
     }
   },
   mounted() {
@@ -172,6 +212,30 @@ export default {
       this.chartData.signos = 100 * this.statsData.signos / sum;
       this.chartData.cartas = 100 * this.statsData.cartas / sum;
     },
+    async changePassword() {
+      this.successPass = false;
+      this.errorPass = false;
+      if (this.newPass) {
+        let success = await userService.updatePassUsuario(this.userData.id, this.newPass);
+        if (success) {
+          this.successPass = true;
+        }
+      } else {
+        this.errorPass = true;
+      }
+    },
+    async updateUser() {
+      this.successData = false;
+      this.errorData = false;
+      if (this.userData.nombre && this.userData.apellidos && this.userData.email && this.userData.signo) {
+        let success = await userService.updateDataUsuario(this.userData);
+        if (success) {
+          this.successData = true;
+        }
+      } else {
+        this.errorData = true;
+      }
+    },
     cerrarSesion() {
       localStorage.removeItem('user');
       this.$router.push({path: '/'});
@@ -216,12 +280,22 @@ h1 {
   border-image: linear-gradient(0.25turn, rgb(138, 17, 219), rgb(39, 216, 223), rgb(53, 230, 171));
   border-image-slice: 1;
   background-color: #3e3e48;
+  text-align: center;
 }
 
 .login-text {
   max-width: 250px;
   margin: 5px auto;
   line-height: 20px;
+}
+
+.data-title {
+  max-width: 250px;
+  margin: 5px auto;
+  line-height: 20px;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 20px;
 }
 
 .login-label {
@@ -252,6 +326,7 @@ h1 {
   border-image: linear-gradient(0.25turn, rgb(138, 17, 219), rgb(39, 216, 223), rgb(53, 230, 171));
   border-image-slice: 1;
   cursor: pointer;
+  text-align: center;
 }
 
 .error-log {
@@ -316,7 +391,7 @@ h1 {
 .grafica-sino {
   width: 60%;
   margin: 0 auto;
-  background-color: #c77cdd;
+  background-color: #665add;
   padding: 1px;
   border-radius: 5px 5px 0px 0px;
 }
@@ -324,7 +399,7 @@ h1 {
 .grafica-amor {
   width: 60%;
   margin: 0 auto;
-  background-color: #ddd37c;
+  background-color: #4d8ede;
   padding: 1px;
   border-radius: 5px 5px 0px 0px;
 }
@@ -332,7 +407,7 @@ h1 {
 .grafica-nombres {
   width: 60%;
   margin: 0 auto;
-  background-color: #7cb1dd;
+  background-color: #28d9dc;
   padding: 1px;
   border-radius: 5px 5px 0px 0px;
 }
@@ -340,7 +415,7 @@ h1 {
 .grafica-signos {
   width: 60%;
   margin: 0 auto;
-  background-color: #7cdd84;
+  background-color: #30e1bf;
   padding: 1px;
   border-radius: 5px 5px 0px 0px;
 }
@@ -348,7 +423,7 @@ h1 {
 .grafica-cartas {
   width: 60%;
   margin: 0 auto;
-  background-color: #dd7c7c;
+  background-color: #35e6ab;
   padding: 1px;
   border-radius: 5px 5px 0px 0px;
 }
@@ -367,6 +442,27 @@ h1 {
 
 .titulo-grafica {
   text-align: center;
+}
+
+.select-login {
+  width: 265px;
+  border: 0px solid white;
+  border-bottom: 1px solid #ffffff;
+  background-color: transparent;
+  padding: 7px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  color: #ffffff;
+  outline: none;
+}
+
+option {
+  color: #2c2c32;
+}
+
+.success-log {
+  text-align: center;
+  color: #28dc73;
 }
 
 @media (max-width: 950px) {

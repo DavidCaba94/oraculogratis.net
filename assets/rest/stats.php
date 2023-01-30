@@ -30,11 +30,16 @@ $pass = md5($pass);
 
 switch($opcion){
     case 1:
-        $consulta = "SELECT * FROM stats WHERE id_user = '$id_user'";
-        $resultado = $conexion->prepare($consulta);
-        $resultado->execute();
-        $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
-        break;
+      $consulta = "SELECT * FROM stats WHERE id_user = '$id_user'";
+      $resultado = $conexion->prepare($consulta);
+      $resultado->execute();
+      $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
+      break;
+    case 2:
+      $consulta = "INSERT INTO stats (id_user, sino, amor, nombres, signos, cartas) VALUES('$id_user', 0, 0, 0, 0, 0)";
+      $resultado = $conexion->prepare($consulta);
+      $resultado->execute();                
+      break;
 }
 print json_encode($data, JSON_UNESCAPED_UNICODE);
 $conexion = NULL;

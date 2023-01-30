@@ -41,6 +41,7 @@
 
 <script>
 import userService from '../assets/js/usuario.js';
+import statsService from '../assets/js/stats.js';
 
 export default {
   name: 'Registro',
@@ -82,7 +83,10 @@ export default {
         if (this.user.email !== null && this.user.pass !== null && this.user.pass2 !== null && this.user.nombre !== null && this.user.apellidos !== null &&this.user.signo !== null) {
           if (this.user.pass === this.user.pass2) {
             let success = await userService.registrarUsuario(this.user);
-            if (success) {this.$router.push({path: '/bienvenido'});}
+            if (success) {
+              this.registrarStats();
+              this.$router.push({path: '/bienvenido'});
+            }
           } else {
             this.errorLog = 'Las contraseñas no coinciden'
           }
@@ -101,6 +105,11 @@ export default {
         correoDisponible = false;
       }
       return correoDisponible;
+    },
+    async registrarStats() {
+      let userId = await userService.getLastUser();
+      console.log(userId);
+      await statsService.registrarStatsByUser(parseInt(userId));
     }
   }
 }

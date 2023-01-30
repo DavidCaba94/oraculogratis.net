@@ -14,5 +14,17 @@ export default {
       }
     });
     return stats;
+  },
+  async registrarStatsByUser(id_user) {
+    let successReg = false;
+    await axios.post(url, {
+      opcion:2,
+      id_user: id_user
+    }).then(response =>{
+      if(response.status == 200){
+        successReg = true;
+      }
+    });
+    return successReg;
   }
 }

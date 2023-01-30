@@ -44,5 +44,16 @@ export default {
       }
     });
     return finalUser;
+  },
+  async getLastUser() {
+    let idUser = null;
+    await axios.post(url, {
+      opcion:4
+    }).then(response =>{
+      if(response.status == 200 && response.data.length > 0){
+        idUser = response.data[0].id;
+      }
+    });
+    return idUser;
   }
 }

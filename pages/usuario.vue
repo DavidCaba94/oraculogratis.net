@@ -361,7 +361,7 @@ h1 {
 
 .box-grafica {
   width: 90%;
-  max-width: 800px;
+  max-width: 400px;
   margin: 0 auto;
   padding: 10px;
 }

@@ -31,6 +31,7 @@
           <option value="Tauro">Tauro</option>
           <option value="Virgo">Virgo</option>
         </select>
+        <p class="politica-privacidad">Al registrarte aceptas nuestra <NuxtLink to="/politica-de-privacidad">política de privacidad</NuxtLink></p>
         <div class="btn-login" @click="registrarUsuario()" v-if="!loading">Registrarme</div>
         <div class="lds-ellipsis" v-if="loading"><div></div><div></div><div></div><div></div></div>
         <div class="error-log" v-if="errorLog !== null">{{ errorLog }}</div>
@@ -210,6 +211,14 @@ option {
   margin: 5px auto;
   line-height: 20px;
   color: #ff7575;
+}
+
+.politica-privacidad {
+  font-size: 11px;
+}
+
+.politica-privacidad a {
+  text-decoration: underline;
 }
 
 @media (max-width: 950px) {

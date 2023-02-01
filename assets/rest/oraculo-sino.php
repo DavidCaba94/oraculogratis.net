@@ -25,19 +25,21 @@ permisos();
 
 $opcion = (isset($_POST['opcion'])) ? $_POST['opcion'] : '';
 $id_user = (isset($_POST['id_user'])) ? $_POST['id_user'] : '';
+$pregunta = (isset($_POST['pregunta'])) ? $_POST['pregunta'] : '';
+$respuesta = (isset($_POST['respuesta'])) ? $_POST['respuesta'] : '';
 
 switch($opcion){
-    case 1:
-      $consulta = "SELECT * FROM stats WHERE id_user = '$id_user'";
-      $resultado = $conexion->prepare($consulta);
-      $resultado->execute();
-      $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
-      break;
-    case 2:
-      $consulta = "INSERT INTO stats (id_user, sino, amor, nombres, signos, cartas) VALUES('$id_user', 0, 0, 0, 0, 0)";
-      $resultado = $conexion->prepare($consulta);
-      $resultado->execute();                
-      break;
+  case 1:
+    $consulta = "SELECT * FROM preguntas_sino WHERE id_user = '$id_user' ORDER BY id DESC LIMIT 10";
+    $resultado = $conexion->prepare($consulta);
+    $resultado->execute();
+    $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
+    break;
+  case 2:
+    $consulta = "INSERT INTO preguntas_sino (id_user, pregunta, respuesta) VALUES('$id_user', '$pregunta', '$respuesta')";
+    $resultado = $conexion->prepare($consulta);
+    $resultado->execute();                
+    break;
 }
 print json_encode($data, JSON_UNESCAPED_UNICODE);
 $conexion = NULL;

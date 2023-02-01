@@ -30,7 +30,7 @@ $respuesta = (isset($_POST['respuesta'])) ? $_POST['respuesta'] : '';
 
 switch($opcion){
   case 1:
-    $consulta = "SELECT * FROM preguntas_sino WHERE id_user = '$id_user' ORDER BY id DESC LIMIT 10";
+    $consulta = "SELECT * FROM preguntas_sino WHERE id_user = '$id_user' ORDER BY id DESC LIMIT 5";
     $resultado = $conexion->prepare($consulta);
     $resultado->execute();
     $data=$resultado->fetchAll(PDO::FETCH_ASSOC);

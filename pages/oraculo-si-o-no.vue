@@ -13,11 +13,18 @@
       <div class="error-log" v-if="errorLog">Es obligatorio hacer una pregunta</div>
       <div class="btn-oraculo" @click="hacerPregunta()">Preguntar</div>
     </div>
-    <div class="box-oraculo">
-      <p class="label-input">Este es tu historial de preguntas</p>
-      <div v-for="resp in responsesList" :key="resp.id">
-        <div>{{resp.pregunta}}-{{resp.respuesta}}</div>
+    <div class="box-respuestas" v-if="userLogged">
+      <p class="label-input">Tus últimas 5 preguntas</p>
+      <div v-for="resp in responsesList" :key="resp.id" class="respuesta-item">
+        <div class="text-pregunta">{{resp.pregunta}}</div>
+        <div class="text-respuesta">{{resp.respuesta}}</div>
       </div>
+    </div>
+    <div v-if="!userLogged" class="box-no-logged">
+      <p>Inicia sesión para ver el historial de tus preguntas</p>
+      <NuxtLink to="/usuario">
+        <div class="btn-oraculo">Iniciar sesión</div>
+      </NuxtLink>
     </div>
   </div>
 </template>
@@ -124,7 +131,7 @@ h1 {
 }
 
 .subtitulo {
-  max-width: 800px;
+  max-width: 600px;
   margin: 0 auto;
   font-size: 13px;
   line-height: 1.5;
@@ -134,7 +141,7 @@ h1 {
 }
 
 .box-oraculo {
-  max-width: 800px;
+  max-width: 600px;
   margin: 0 auto;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -203,6 +210,55 @@ h1 {
   margin: 5px auto;
   line-height: 20px;
   color: #ff7575;
+}
+
+.respuesta-item {
+  max-width: 500px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  padding: 10px;
+  background-color: #3e3e48;
+  border-radius: 5px;
+}
+
+.box-respuestas {
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+  text-align: center;
+}
+
+.text-pregunta {
+  font-size: 12px;
+  text-align: left;
+}
+
+.text-respuesta {
+  min-width: 30px;
+  min-height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  text-align: center;
+  background-color: #a887e1;
+  border-radius: 50px;
+}
+
+.box-no-logged {
+  max-width: 500px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #3e3e48;
+  border-radius: 5px;
+  text-align: center;
 }
 
 /* LOADER */

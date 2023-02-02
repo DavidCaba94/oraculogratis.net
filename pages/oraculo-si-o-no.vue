@@ -26,11 +26,13 @@
         <div class="btn-oraculo">Iniciar sesión</div>
       </NuxtLink>
     </div>
+    <h2>Historia del oráculo</h2>
   </div>
 </template>
 
 <script>
 import sinoService from '../assets/js/sino.js';
+import statsService from '../assets/js/stats.js';
 
 export default {
   name: 'OraculoSiNo',
@@ -87,6 +89,7 @@ export default {
           this.respuesta = 'NO';
         }
         await sinoService.createNewResponseByUser(this.userData.id ? this.userData.id : 0, this.pregunta, this.respuesta);
+        await statsService.setSiNoUse(this.userData.id);
         this.loadingRespuesta = false;
         this.pregunta = '';
         this.getUserResponses();
@@ -130,6 +133,10 @@ h1 {
   text-align: center;
 }
 
+h2 {
+  text-align: center;
+}
+
 .subtitulo {
   max-width: 600px;
   margin: 0 auto;
@@ -146,10 +153,6 @@ h1 {
   margin-top: 20px;
   margin-bottom: 20px;
   padding: 10px;
-  border: 1px solid transparent;
-  border-image: linear-gradient(0.25turn, rgb(138, 17, 219), rgb(39, 216, 223), rgb(53, 230, 171));
-  border-image-slice: 1;
-  background-color: #3e3e48;
   text-align: center;
 }
 
@@ -192,8 +195,8 @@ h1 {
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 0px;
+  margin-bottom: 40px;
   background-image: url('../assets/img/icon-transparent.png');
   background-position: center;
   background-size: cover;
@@ -256,8 +259,10 @@ h1 {
   margin: 0 auto;
   margin-bottom: 10px;
   padding: 10px;
+  border: 1px solid transparent;
+  border-image: linear-gradient(0.25turn, rgb(138, 17, 219), rgb(39, 216, 223), rgb(53, 230, 171));
+  border-image-slice: 1;
   background-color: #3e3e48;
-  border-radius: 5px;
   text-align: center;
 }
 

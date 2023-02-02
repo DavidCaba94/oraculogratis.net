@@ -26,5 +26,65 @@ export default {
       }
     });
     return successReg;
+  },
+  async setSiNoUse(idUser) {
+    let successUpdate = false;
+    await axios.post(url, {
+      opcion:3, 
+      id_user: idUser
+    }).then(response =>{
+      if(response.status == 200){
+        successUpdate = true;
+      }
+    });
+    return successUpdate;
+  },
+  async setAmorUse(idUser) {
+    let successUpdate = false;
+    await axios.post(url, {
+      opcion:3, 
+      id_user: idUser
+    }).then(response =>{
+      if(response.status == 200){
+        successUpdate = true;
+      }
+    });
+    return successUpdate;
+  },
+  async setNombresUse(idUser) {
+    let successUpdate = false;
+    await axios.post(url, {
+      opcion:3, 
+      id_user: idUser
+    }).then(response =>{
+      if(response.status == 200){
+        successUpdate = true;
+      }
+    });
+    return successUpdate;
+  },
+  async setSignosUse(idUser) {
+    let successUpdate = false;
+    await axios.post(url, {
+      opcion:3, 
+      id_user: idUser
+    }).then(response =>{
+      if(response.status == 200){
+        successUpdate = true;
+      }
+    });
+    return successUpdate;
+  },
+  async setCartasUse(idUser) {
+    let successUpdate = false;
+    await axios.post(url, {
+      opcion:3, 
+      id_user: idUser
+    }).then(response =>{
+      if(response.status == 200){
+        successUpdate = true;
+      }
+    });
+    return successUpdate;
   }
 }

@@ -38,6 +38,31 @@ switch($opcion){
       $resultado = $conexion->prepare($consulta);
       $resultado->execute();                
       break;
+    case 3:
+      $consulta = "UPDATE stats SET sino=sino+1 WHERE id_user='$id_user'";	
+      $resultado = $conexion->prepare($consulta);
+      $resultado->execute();                
+      break;
+    case 4:
+      $consulta = "UPDATE stats SET amor=amor+1 WHERE id_user='$id_user'";	
+      $resultado = $conexion->prepare($consulta);
+      $resultado->execute();                
+      break;
+    case 5:
+      $consulta = "UPDATE stats SET nombres=nombres+1 WHERE id_user='$id_user'";	
+      $resultado = $conexion->prepare($consulta);
+      $resultado->execute();                
+      break;
+    case 6:
+      $consulta = "UPDATE stats SET signos=signos+1 WHERE id_user='$id_user'";	
+      $resultado = $conexion->prepare($consulta);
+      $resultado->execute();                
+      break;
+    case 7:
+      $consulta = "UPDATE stats SET cartas=cartas+1 WHERE id_user='$id_user'";	
+      $resultado = $conexion->prepare($consulta);
+      $resultado->execute();                
+      break;
 }
 print json_encode($data, JSON_UNESCAPED_UNICODE);
 $conexion = NULL;

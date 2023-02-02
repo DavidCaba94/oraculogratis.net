@@ -26,6 +26,7 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+    '@nuxtjs/google-fonts'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -51,6 +52,20 @@ export default {
     manifest: {
       lang: 'es'
     }
+  },
+
+  googleFonts: {
+    families: {
+      Roboto: true,
+      'Josefin+Sans': true,
+      Lato: [100, 300, 500, 700],
+      Raleway: {
+        wght: [100, 300, 400, 500, 700],
+        ital: [100]
+      }
+    },
+    display: 'swap',
+    prefetch: true
   },
 
   // Content module configuration: https://go.nuxtjs.dev/config-content

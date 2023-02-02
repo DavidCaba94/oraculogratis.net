@@ -251,7 +251,7 @@ a {
 .mobile-items-container-show {
   display: block;
   position: absolute;
-  width: 90%;
+  width: 92%;
   margin: 0 auto;
   padding: 10px;
   padding-bottom: 20px;

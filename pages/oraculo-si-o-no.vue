@@ -2,7 +2,7 @@
   <div>
     <Menu/>
     <h1>Oráculo si o no</h1>
-    <p class="texto">Este es el oráculo del si o no gratis más fiable de internet. Haz tus preguntas y el oráculo del si o no te responderá con total precisión. Puedes hacer todas las preguntas que quieras de manera totalmente gratuita.</p>
+    <p class="texto">Este es el <strong>oráculo del si o no gratis</strong> más <strong>fiable</strong> de internet. Haz tus preguntas y el oráculo del si o no te responderá con <strong>total precisión</strong>. Puedes hacer todas las preguntas que quieras de manera totalmente gratuita.</p>
     <div class="box-oraculo">
       <div class="area-respuesta">
         <div class="respuesta" v-if="!loadingRespuesta">{{respuesta}}</div>
@@ -28,15 +28,15 @@
     </div>
     <h2>Historia del oráculo</h2>
     <p class="texto">El <strong>Oráculo del Sí o No</strong> es una práctica antigua que consiste en hacer una pregunta y obtener una respuesta afirmativa o negativa. Se cree que esta técnica se utilizaba en la antigüedad en <strong>consultas a dioses o espíritus</strong> para recibir orientación sobre decisiones importantes.</p>
-    <p class="texto">Hay muchas formas diferentes de realizar una consulta al Oráculo del Sí o No, desde el <strong>uso de monedas</strong> hasta la <strong>interpretación de sueños</strong> o la <strong>realización de rituales</strong> específicos. En muchas culturas, se considera que el Oráculo del Sí o No es una forma de comunicación directa con los dioses o el universo, y se le atribuye un gran poder y sabiduría.</p>
-    <p class="texto">Aunque la práctica del Oráculo del Sí o No ha existido por muchos siglos, aún sigue siendo popular en la actualidad. Muchas personas lo utilizan como una forma de tomar decisiones o resolver incertidumbres, y creen que la respuesta proporcionada por el Oráculo es una guía valiosa para su vida.</p>
-    <p class="texto">En resumen, el Oráculo del Sí o No es una tradición antigua que se ha transmitido de generación en generación y que todavía se utiliza hoy en día como una forma de recibir orientación y respuestas a preguntas importantes.</p>
+    <p class="texto">Hay muchas formas diferentes de realizar una <strong>consulta al Oráculo del Sí o No</strong>, desde el <strong>uso de monedas</strong> hasta la <strong>interpretación de sueños</strong> o la <strong>realización de rituales</strong> específicos. En muchas culturas, se considera que el Oráculo del Sí o No es una forma de comunicación directa con los dioses o el universo, y se le atribuye un gran poder y sabiduría.</p>
+    <p class="texto">Aunque la práctica del Oráculo del Sí o No ha existido por muchos siglos, aún <strong>sigue siendo popular en la actualidad</strong>. Muchas personas lo utilizan como una forma de <strong>tomar decisiones</strong> o resolver incertidumbres, y creen que la respuesta proporcionada por el Oráculo es una guía valiosa para su vida.</p>
+    <p class="texto">En resumen, el Oráculo del Sí o No es una tradición antigua que se ha transmitido de generación en generación y que todavía se utiliza hoy en día como una forma de <strong>recibir orientación y respuestas</strong> a preguntas importantes.</p>
     <h2>¿Cómo funciona el oráculo del si o no?</h2>
-    <p class="texto">El funcionamiento del Oráculo del Sí o No puede variar dependiendo de la cultura o la tradición que lo utilice, pero en general se basa en la interpretación de señales o símbolos para obtener una respuesta afirmativa o negativa a una pregunta específica. Algunas formas comunes de realizar una consulta al Oráculo del Sí o No incluyen:</p>
+    <p class="texto">El funcionamiento del Oráculo del Sí o No puede variar dependiendo de la cultura o la tradición que lo utilice, pero en general se basa en la <strong>interpretación de señales o símbolos para obtener una respuesta afirmativa o negativa</strong> a una pregunta específica. Algunas formas comunes de realizar una consulta al Oráculo del Sí o No incluyen:</p>
     <p class="texto texto-item"><strong><u>Tiro de moneda:</u></strong> Una de las formas más simples y conocidas de realizar una consulta al Oráculo del Sí o No es a través del tiro de una moneda. Se hace una pregunta y se tira una moneda al aire, y se interpreta la respuesta en función de si la moneda cae cara o cruz.</p>
     <p class="texto texto-item"><strong><u>Juego de naipes:</u></strong> Otra forma común de realizar una consulta al Oráculo del Sí o No es a través del uso de naipes. Se mezclan las cartas y se eligen al azar, y se interpreta la respuesta en función de la carta seleccionada.</p>
     <p class="texto texto-item"><strong><u>Interpretación de sueños:</u></strong> Algunas tradiciones creen que los sueños pueden proporcionar respuestas a través del Oráculo del Sí o No. Se hace una pregunta antes de dormir y se anota el sueño que se tuvo, y se interpreta la respuesta en función de los detalles del sueño.</p>
-    <p class="texto">En todos estos casos, la interpretación de la respuesta puede variar dependiendo de la cultura o tradición que la utilice, pero en general se busca una respuesta afirmativa o negativa clara a la pregunta planteada. Algunas personas también pueden recibir respuestas más detalladas o complejas a través de la interpretación de la respuesta del Oráculo del Sí o No.</p>
+    <p class="texto">En todos estos casos, <strong>la interpretación de la respuesta puede variar dependiendo de la cultura o tradición que la utilice</strong>, pero en general se busca una respuesta afirmativa o negativa clara a la pregunta planteada. Algunas personas también pueden recibir respuestas más detalladas o complejas a través de la interpretación de la respuesta del Oráculo del Sí o No.</p>
   </div>
 </template>
 

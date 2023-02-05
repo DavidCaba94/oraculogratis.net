@@ -26,7 +26,7 @@
         <div class="btn-oraculo">Iniciar sesión</div>
       </NuxtLink>
     </div>
-    <h2>Historia del oráculo</h2>
+    <h2>Historia del oráculo del si o no</h2>
     <p class="texto">El <strong>Oráculo del Sí o No</strong> es una práctica antigua que consiste en hacer una pregunta y obtener una respuesta afirmativa o negativa. Se cree que esta técnica se utilizaba en la antigüedad en <strong>consultas a dioses o espíritus</strong> para recibir orientación sobre decisiones importantes.</p>
     <p class="texto">Hay muchas formas diferentes de realizar una <strong>consulta al Oráculo del Sí o No</strong>, desde el <strong>uso de monedas</strong> hasta la <strong>interpretación de sueños</strong> o la <strong>realización de rituales</strong> específicos. En muchas culturas, se considera que el Oráculo del Sí o No es una forma de comunicación directa con los dioses o el universo, y se le atribuye un gran poder y sabiduría.</p>
     <p class="texto">Aunque la práctica del Oráculo del Sí o No ha existido por muchos siglos, aún <strong>sigue siendo popular en la actualidad</strong>. Muchas personas lo utilizan como una forma de <strong>tomar decisiones</strong> o resolver incertidumbres, y creen que la respuesta proporcionada por el Oráculo es una guía valiosa para su vida.</p>
@@ -128,7 +128,7 @@ export default {
 <style>
 body {
   margin: 0;
-  background-color: #2c2c32;
+  background-color: #343541;
   font-family: 'Roboto', sans-serif;
   color: #ffffff;
   padding: 10px;
@@ -238,7 +238,7 @@ h2 {
   justify-content: space-between;
   flex-wrap: nowrap;
   padding: 10px;
-  background-color: #3e3e48;
+  background-color: #444654;
   border-radius: 5px;
 }
 
@@ -276,7 +276,7 @@ h2 {
   border: 1px solid transparent;
   border-image: linear-gradient(0.25turn, rgb(138, 17, 219), rgb(39, 216, 223), rgb(53, 230, 171));
   border-image-slice: 1;
-  background-color: #3e3e48;
+  background-color: #444654;
   text-align: center;
 }
 

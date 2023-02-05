@@ -119,7 +119,7 @@ export default {
 <style>
 body {
   margin: 0;
-  background-color: #2c2c32;
+  background-color: #343541;
   font-family: 'Roboto', sans-serif;
   color: #ffffff;
   padding: 10px;
@@ -151,7 +151,7 @@ h1 {
   border: 1px solid transparent;
   border-image: linear-gradient(0.25turn, rgb(138, 17, 219), rgb(39, 216, 223), rgb(53, 230, 171));
   border-image-slice: 1;
-  background-color: #3e3e48;
+  background-color: #444654;
 }
 
 .login-text {
@@ -191,7 +191,7 @@ h1 {
 }
 
 option {
-  color: #2c2c32;
+  color: #343541;
 }
 
 .btn-login {

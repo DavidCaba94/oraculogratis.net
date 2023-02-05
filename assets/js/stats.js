@@ -42,7 +42,7 @@ export default {
   async setAmorUse(idUser) {
     let successUpdate = false;
     await axios.post(url, {
-      opcion:3, 
+      opcion:4, 
       id_user: idUser
     }).then(response =>{
       if(response.status == 200){
@@ -54,7 +54,7 @@ export default {
   async setNombresUse(idUser) {
     let successUpdate = false;
     await axios.post(url, {
-      opcion:3, 
+      opcion:5, 
       id_user: idUser
     }).then(response =>{
       if(response.status == 200){
@@ -66,7 +66,7 @@ export default {
   async setSignosUse(idUser) {
     let successUpdate = false;
     await axios.post(url, {
-      opcion:3, 
+      opcion:6, 
       id_user: idUser
     }).then(response =>{
       if(response.status == 200){
@@ -78,7 +78,7 @@ export default {
   async setCartasUse(idUser) {
     let successUpdate = false;
     await axios.post(url, {
-      opcion:3, 
+      opcion:7, 
       id_user: idUser
     }).then(response =>{
       if(response.status == 200){

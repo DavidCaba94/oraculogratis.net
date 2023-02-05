@@ -166,7 +166,7 @@ export default {
 <style scoped>
 body {
   margin: 0;
-  background-color: #2c2c32 !important;
+  background-color: #343541 !important;
   font-family: 'Roboto', sans-serif;
   color: #ffffff;
   padding: 10px;
@@ -255,8 +255,7 @@ a {
   margin: 0 auto;
   padding: 10px;
   padding-bottom: 20px;
-  background-color: #2c2c32;
-  border-bottom: 2px solid #27272c;
+  background-color: #343541;
 }
 
 .mobile-items-container-hide {

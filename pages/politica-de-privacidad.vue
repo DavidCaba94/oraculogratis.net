@@ -36,7 +36,7 @@ export default {
 <style>
 body {
   margin: 0;
-  background-color: #2c2c32;
+  background-color: #343541;
   font-family: 'Roboto', sans-serif;
   color: #ffffff;
   padding: 10px;

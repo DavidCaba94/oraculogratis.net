@@ -28,5 +28,17 @@ export default {
       }
     });
     return successReg;
-  }
+  },
+  async getAllResponsesHistoryByUserId(id) {
+    let responses = [];
+    await axios.post(url, {
+      opcion:3,
+      id_user: id
+    }).then(response =>{
+      if(response.status == 200){
+        responses = response.data;
+      }
+    });
+    return responses;
+  },
 }

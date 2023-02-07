@@ -40,6 +40,12 @@ switch($opcion){
     $resultado = $conexion->prepare($consulta);
     $resultado->execute();                
     break;
+  case 3:
+    $consulta = "SELECT * FROM preguntas_sino WHERE id_user = '$id_user' ORDER BY id DESC";
+    $resultado = $conexion->prepare($consulta);
+    $resultado->execute();
+    $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
+    break;
 }
 print json_encode($data, JSON_UNESCAPED_UNICODE);
 $conexion = NULL;

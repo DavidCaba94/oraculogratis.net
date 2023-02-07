@@ -19,6 +19,9 @@
         <div class="text-pregunta">{{resp.pregunta}}</div>
         <div class="text-respuesta">{{resp.respuesta}}</div>
       </div>
+      <NuxtLink to="/historial-preguntas">
+        <div class="link-historial">Ver historial completo</div>
+      </NuxtLink>
     </div>
     <div v-if="!userLogged" class="box-no-logged">
       <p>Inicia sesión para ver el historial de tus preguntas</p>
@@ -288,6 +291,17 @@ h2 {
   border-image-slice: 1;
   background-color: #444654;
   text-align: center;
+}
+
+.link-historial {
+  width: 170px;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid transparent;
+  border-image: linear-gradient(0.25turn, rgb(138, 17, 219), rgb(39, 216, 223), rgb(53, 230, 171));
+  border-image-slice: 1;
+  padding: 5px;
 }
 
 /* LOADER */

@@ -41,4 +41,15 @@ export default {
     });
     return responses;
   },
+  async getAllOracleResponses() {
+    let responses = [];
+    await axios.post(url, {
+      opcion:4
+    }).then(response =>{
+      if(response.status == 200){
+        responses = response.data[0].numPreguntas;
+      }
+    });
+    return responses;
+  }
 }

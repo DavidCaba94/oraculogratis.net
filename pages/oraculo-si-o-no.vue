@@ -4,6 +4,7 @@
     <h1>Oráculo si o no</h1>
     <p class="texto">Este es el <strong>oráculo del si o no gratis</strong> más <strong>fiable</strong> de internet. Haz tus preguntas y el oráculo del si o no te responderá con <strong>total precisión</strong>. Puedes hacer todas las preguntas que quieras de manera totalmente gratuita.</p>
     <div class="box-oraculo">
+      <p class="preguntas-totales">Respuestas del oráculo: {{totalResponses}}</p>
       <div class="area-respuesta">
         <div class="respuesta" v-if="!loadingRespuesta">{{respuesta}}</div>
         <div class="lds-ellipsis" v-if="loadingRespuesta"><div></div><div></div><div></div><div></div></div>
@@ -88,7 +89,8 @@ export default {
         signo: null
       },
       userLogged: false,
-      responsesList: []
+      responsesList: [],
+      totalResponses: ''
     }
   },
   mounted () {
@@ -96,6 +98,7 @@ export default {
       this.userLogged = true;
       this.getUserData();
     }
+    this.getTotalResponses();
   },
   methods: {
     async hacerPregunta() {
@@ -110,6 +113,7 @@ export default {
           this.respuesta = 'NO';
         }
         await sinoService.createNewResponseByUser(this.userData.id ? this.userData.id : 0, this.pregunta, this.respuesta);
+        await this.getTotalResponses();
         if (this.userLogged) {
           await statsService.setSiNoUse(this.userData.id);
         }
@@ -133,6 +137,9 @@ export default {
       if (this.userLogged) {
         this.responsesList = await sinoService.getAllResponsesByUserId(this.userData.id);
       }
+    },
+    async getTotalResponses() {
+      this.totalResponses = await sinoService.getAllOracleResponses();
     }
   }
 }
@@ -302,6 +309,13 @@ h2 {
   border-image: linear-gradient(0.25turn, rgb(138, 17, 219), rgb(39, 216, 223), rgb(53, 230, 171));
   border-image-slice: 1;
   padding: 5px;
+}
+
+.preguntas-totales {
+  text-align: left;
+  font-size: 12px;
+  margin: 0;
+  margin-bottom: 15px;
 }
 
 /* LOADER */

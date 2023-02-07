@@ -201,6 +201,11 @@ a {
   padding: 7px;
 }
 
+.menu-item:hover {
+  background-color: #444654;
+  border-radius: 5px;
+}
+
 .active-menu-item {
   padding: 7px;
   border-bottom: 1px solid transparent;

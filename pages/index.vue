@@ -2,6 +2,7 @@
   <div class="main-container">
     <Menu/>
     <h1>Oráculo Gratis</h1>
+    <Footer/>
   </div>
 </template>
 

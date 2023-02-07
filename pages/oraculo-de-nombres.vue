@@ -2,6 +2,7 @@
   <div>
     <Menu/>
     <h1>Oráculo de nombres</h1>
+    <Footer/>
   </div>
 </template>
 

@@ -2,6 +2,7 @@
   <div>
     <Menu/>
     <h1>Oráculo de signos</h1>
+    <Footer/>
   </div>
 </template>
 

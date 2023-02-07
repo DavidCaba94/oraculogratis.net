@@ -37,6 +37,7 @@
         <div class="error-log" v-if="errorLog !== null">{{ errorLog }}</div>
       </div>
     </div>
+    <Footer/>
   </div>
 </template>
 

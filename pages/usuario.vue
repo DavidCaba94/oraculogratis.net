@@ -100,6 +100,7 @@
       </div>
       <div class="btn-logout" @click="cerrarSesion()">Cerrar Sesión</div>
     </div>
+    <Footer/>
   </div>
 </template>
 

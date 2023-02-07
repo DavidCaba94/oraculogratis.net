@@ -8,6 +8,7 @@
     <p class="parrafo-politica">Cambios a esta política de privacidad: oraculogratis.net se reserva el derecho de modificar esta política de privacidad en cualquier momento. Cualquier cambio en nuestra política de privacidad se publicará en esta página para que los usuarios estén informados.</p>
     <p class="parrafo-politica">Contacto: Si tiene preguntas o inquietudes sobre esta política de privacidad, por favor contáctenos en contacto@oraculogratis.net.</p>
     <p class="parrafo-politica">Aceptación de la política de privacidad: Al utilizar oraculogratis.net, acepta los términos de esta política de privacidad. Si no está de acuerdo con los términos descritos aquí, por favor no proporcione información personal a través de nuestro sitio web.</p>
+    <Footer/>
   </div>
 </template>
 

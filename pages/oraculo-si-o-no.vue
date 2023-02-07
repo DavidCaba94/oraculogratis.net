@@ -37,6 +37,14 @@
     <p class="texto texto-item"><strong><u>Juego de naipes:</u></strong> Otra forma común de realizar una consulta al Oráculo del Sí o No es a través del uso de naipes. Se mezclan las cartas y se eligen al azar, y se interpreta la respuesta en función de la carta seleccionada.</p>
     <p class="texto texto-item"><strong><u>Interpretación de sueños:</u></strong> Algunas tradiciones creen que los sueños pueden proporcionar respuestas a través del Oráculo del Sí o No. Se hace una pregunta antes de dormir y se anota el sueño que se tuvo, y se interpreta la respuesta en función de los detalles del sueño.</p>
     <p class="texto">En todos estos casos, <strong>la interpretación de la respuesta puede variar dependiendo de la cultura o tradición que la utilice</strong>, pero en general se busca una respuesta afirmativa o negativa clara a la pregunta planteada. Algunas personas también pueden recibir respuestas más detalladas o complejas a través de la interpretación de la respuesta del Oráculo del Sí o No.</p>
+    <h2>Oráculos famosos</h2>
+    <p class="texto">Los oráculos son figuras míticas que han sido consultadas a lo largo de la historia para <strong>predecir el futuro y tomar decisiones importantes</strong>. Algunos de los oráculos más famosos incluyen:</p>
+    <p class="texto texto-item"><strong><u>El Oráculo de Delfos:</u></strong> Situado en la antigua ciudad griega de Delfos, este oráculo era considerado <strong>el más importante de la antigüedad y era consultado por reyes, políticos y personas comunes</strong>. La sacerdotisa del Oráculo de Delfos, conocida como la Pitia, daba respuestas en nombre del dios Apolo.</p>
+    <p class="texto texto-item"><strong><u>La Sibila Cumana:</u></strong> Era una profetisa de la antigua ciudad de Cumae, en Italia. La Sibila Cumana es conocida por sus <strong>profecías escritas en versos</strong> que describen los acontecimientos futuros y el fin del mundo.</p>
+    <p class="texto texto-item"><strong><u>El Oráculo de Endor:</u></strong> Según la Biblia, el Oráculo de Endor <strong>fue consultado por el rey Saúl para predecir el futuro</strong> y fue en esta ocasión donde se dio la famosa advertencia de que Samuel, el profeta, había muerto.</p>
+    <p class="texto texto-item"><strong><u>El Oráculo de la Luna:</u></strong> Este oráculo se encontraba en la antigua Babilonia y era famoso por su capacidad para <strong>predecir el futuro mediante la interpretación de los movimientos y fases de la luna.</strong></p>
+    <p class="texto">Estos son solo algunos de los muchos oráculos famosos que han dejado su huella en la historia. Aunque la veracidad de sus predicciones es objeto de debate, <strong>muchos siguen siendo objeto de estudio y admiración</strong> en la actualidad.</p>
+    <Footer/>
   </div>
 </template>
 
@@ -99,7 +107,9 @@ export default {
           this.respuesta = 'NO';
         }
         await sinoService.createNewResponseByUser(this.userData.id ? this.userData.id : 0, this.pregunta, this.respuesta);
-        await statsService.setSiNoUse(this.userData.id);
+        if (this.userLogged) {
+          await statsService.setSiNoUse(this.userData.id);
+        }
         this.loadingRespuesta = false;
         this.pregunta = '';
         this.getUserResponses();

@@ -5,9 +5,6 @@
     <p class="texto">Consigues un punto por cada uso que haces de cualquiera de nuestros oráculos. Estos puntos los puedes canjear por lo que quieras de la siguiente lista</p>
     <div v-if="!userLogged" class="box-no-logged">
       <p>Inicia sesión para ver la lista de productos que puedes canjear con tus puntos</p>
-      <NuxtLink to="/usuario">
-        <div class="btn-oraculo">Iniciar sesión</div>
-      </NuxtLink>
     </div>
     <div class="box-productos" v-if="userLogged">
       <div class="box-puntos-tienda">

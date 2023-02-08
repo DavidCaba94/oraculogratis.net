@@ -1,7 +1,7 @@
 <template>
   <div>
     <Menu/>
-    <h1>Oráculo del amor</h1>
+    <h1>Oráculo del Amor</h1>
     <p class="texto">Con el <strong>oráculo del amor gratis</strong> más <strong>fiable</strong> de internet podrás conocer lo que os deparará el futuro a tu pareja y a ti. Averigua la <strong>compatibilidad</strong> que tenéis en diferentes aspectos como comunicación, pareja, amor, amistad y sexo simplemente con poner vuestros nombres.</p>
     <div class="box-calculadora">
       <p class="label-input">TU NOMBRE</p>
@@ -12,7 +12,11 @@
       <div class="btn-oraculo" v-if="!loadingCalculo" @click="calcular()">Calcular</div>
       <div class="lds-ellipsis" v-if="loadingCalculo"><div></div><div></div><div></div><div></div></div>
     </div>
-    <div class="nombres-resultado" v-if="nombreUno && nombreDos && mostrarNombres">{{nombreUno}} & {{nombreDos}}</div>
+    <div class="nombres-resultado" v-if="nombreUnoMostrar && nombreDosMostrar && mostrarNombres">
+      <div>{{nombreUnoMostrar}}</div>
+      <img src="../assets/img/heart.png" alt="Amor">
+      <div>{{nombreDosMostrar}}</div>
+    </div>
     <div class="box-resultados">
       <div class="label-bar">Comunicación</div>
       <div class="bar-container">
@@ -80,7 +84,9 @@ export default {
   data() {
     return {
       nombreUno: null,
+      nombreUnoMostrar: null,
       nombreDos: null,
+      nombreDosMostrar: null,
       userData: {
         id: null,
         nombre: null,
@@ -140,6 +146,8 @@ export default {
         if (this.userLogged) {
           await statsService.setAmorUse(this.userData.id);
         }
+        this.nombreUnoMostrar = structuredClone(this.nombreUno);
+        this.nombreDosMostrar = structuredClone(this.nombreDos);
         this.mostrarNombres = true;
       } else {
         this.errorLog = true;
@@ -287,12 +295,17 @@ h2 {
 }
 
 .nombres-resultado {
+  display: block;
   max-width: 300px;
   margin: 0 auto;
   margin-bottom: 10px;
   text-align: center;
-  font-size: 30px;
-  font-weight: 700;
+  font-size: 20px;
+}
+
+.nombres-resultado img {
+  width: 40px;
+  margin-top: 5px;
 }
 
 /* LOADER */

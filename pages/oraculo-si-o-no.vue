@@ -1,7 +1,7 @@
 <template>
   <div>
     <Menu/>
-    <h1>Oráculo si o no</h1>
+    <h1>Oráculo Si o No</h1>
     <p class="texto">Este es el <strong>oráculo del si o no gratis</strong> más <strong>fiable</strong> de internet. Haz tus preguntas y el oráculo del si o no te responderá con <strong>total precisión</strong>. Puedes hacer todas las preguntas que quieras de manera totalmente gratuita.</p>
     <div class="box-oraculo">
       <p class="preguntas-totales">Respuestas del oráculo: {{totalResponses}}</p>

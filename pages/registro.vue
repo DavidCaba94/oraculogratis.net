@@ -44,6 +44,7 @@
 <script>
 import userService from '../assets/js/usuario.js';
 import statsService from '../assets/js/stats.js';
+import puntosService from '../assets/js/puntos.js';
 
 export default {
   name: 'Registro',
@@ -110,8 +111,8 @@ export default {
     },
     async registrarStats() {
       let userId = await userService.getLastUser();
-      console.log(userId);
       await statsService.registrarStatsByUser(parseInt(userId));
+      await puntosService.createPointsByUser(userId);
     }
   }
 }

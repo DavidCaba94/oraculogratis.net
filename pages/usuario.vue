@@ -62,6 +62,16 @@
             <div class="texto-bar">Cartas</div>
           </div>
         </div>
+        <div class="box-puntos">
+          <img src="../assets/img/coin.png" alt="Puntos" class="moneda">
+          <div class="puntos-totales">{{puntos}}</div>
+        </div>
+        <NuxtLink to="/tienda">
+          <div class="link-tienda">
+            <img src="../assets/img/cart.png" alt="Tienda">
+            Canjea aquí tus puntos
+          </div>
+        </NuxtLink>
       </div>
       <div class="box-login">
         <p class="data-title">Tus datos</p>
@@ -107,6 +117,7 @@
 <script>
 import userService from '../assets/js/usuario.js';
 import statsService from '../assets/js/stats.js';
+import puntosService from '../assets/js/puntos.js';
 
 export default {
   name: 'Usuario',
@@ -161,7 +172,8 @@ export default {
       successPass: false,
       errorPass: false,
       successData: false,
-      errorData: false
+      errorData: false,
+      puntos: 0
     }
   },
   mounted() {
@@ -204,6 +216,7 @@ export default {
       this.$set(this.statsData, 'signos', stats.signos);
       this.$set(this.statsData, 'cartas', stats.cartas);
       this.setChartValues();
+      this.getPuntos();
     },
     setChartValues() {
       let sum = parseInt(this.statsData.sino) + parseInt(this.statsData.amor) + parseInt(this.statsData.nombres) + parseInt(this.statsData.signos) + parseInt(this.statsData.cartas);
@@ -212,6 +225,9 @@ export default {
       this.chartData.nombres = 100 * this.statsData.nombres / sum;
       this.chartData.signos = 100 * this.statsData.signos / sum;
       this.chartData.cartas = 100 * this.statsData.cartas / sum;
+    },
+    async getPuntos() {
+      this.puntos = await puntosService.getPointsByUserId(this.userData.id);
     },
     async changePassword() {
       this.successPass = false;
@@ -464,6 +480,44 @@ option {
 .success-log {
   text-align: center;
   color: #28dc73;
+}
+
+.box-puntos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  width: 300px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.moneda {
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+}
+
+.link-tienda {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  width: 200px;
+  margin: 0 auto;
+  margin-top: 20px;
+  text-align: center;
+  padding: 7px;
+  border: 1px solid transparent;
+  border-image: linear-gradient(0.25turn, rgb(138, 17, 219), rgb(39, 216, 223), rgb(53, 230, 171));
+  border-image-slice: 1;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.link-tienda img {
+  width: 25px;
+  margin-right: 10px;
 }
 
 @media (max-width: 950px) {

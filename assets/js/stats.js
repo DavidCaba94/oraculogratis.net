@@ -1,4 +1,5 @@
 import axios from "axios";
+import puntosService from '../js/puntos.js';
 
 var url = "https://davidcaballerocalvo.es/oraculogratis/rest/stats.php";
 
@@ -34,6 +35,7 @@ export default {
       id_user: idUser
     }).then(response =>{
       if(response.status == 200){
+        puntosService.addPointToUser(idUser);
         successUpdate = true;
       }
     });
@@ -46,6 +48,7 @@ export default {
       id_user: idUser
     }).then(response =>{
       if(response.status == 200){
+        puntosService.addPointToUser(idUser);
         successUpdate = true;
       }
     });
@@ -58,6 +61,7 @@ export default {
       id_user: idUser
     }).then(response =>{
       if(response.status == 200){
+        puntosService.addPointToUser(idUser);
         successUpdate = true;
       }
     });
@@ -70,6 +74,7 @@ export default {
       id_user: idUser
     }).then(response =>{
       if(response.status == 200){
+        puntosService.addPointToUser(idUser);
         successUpdate = true;
       }
     });
@@ -82,6 +87,7 @@ export default {
       id_user: idUser
     }).then(response =>{
       if(response.status == 200){
+        puntosService.addPointToUser(idUser);
         successUpdate = true;
       }
     });

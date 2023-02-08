@@ -25,7 +25,7 @@
       </NuxtLink>
     </div>
     <div v-if="!userLogged" class="box-no-logged">
-      <p>Inicia sesión para ver el historial de tus preguntas</p>
+      <p>Inicia sesión para ver el historial de tus preguntas y conseguir puntos canjeables</p>
       <NuxtLink to="/usuario">
         <div class="btn-oraculo">Iniciar sesión</div>
       </NuxtLink>

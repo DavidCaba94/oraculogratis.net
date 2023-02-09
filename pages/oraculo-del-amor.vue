@@ -149,6 +149,8 @@ export default {
         this.nombreUnoMostrar = structuredClone(this.nombreUno);
         this.nombreDosMostrar = structuredClone(this.nombreDos);
         this.mostrarNombres = true;
+        this.nombreUno = null;
+        this.nombreDos = null;
       } else {
         this.errorLog = true;
       }
@@ -186,6 +188,9 @@ h2 {
   margin-top: 20px;
   text-align: center;
   padding: 10px;
+  background-color: #444654;
+  border-radius: 5px;
+  margin-bottom: 30px;
 }
 
 .texto {
@@ -247,6 +252,7 @@ h2 {
   margin-bottom: 40px;
   background-color: #444654;
   padding: 10px;
+  border-radius: 5px;
 }
 
 .label-bar {

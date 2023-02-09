@@ -68,7 +68,7 @@
         </div>
         <NuxtLink to="/tienda">
           <div class="link-tienda">
-            <img src="../assets/img/cart.png" alt="Tienda">
+            <img src="_nuxt/assets/img/cart.png" alt="Tienda">
             Canjea aquí tus puntos
           </div>
         </NuxtLink>

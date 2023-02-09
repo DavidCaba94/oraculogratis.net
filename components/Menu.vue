@@ -19,23 +19,37 @@
       <NuxtLink to="/oraculo-de-cartas">
         <div :class="getActiveMenuItem('oraculo-de-cartas')">Oráculo de cartas</div>
       </NuxtLink>
-      <NuxtLink to="/usuario" v-if="!userLogged">
-        <div class="btn-login-menu">Iniciar sesión</div>
-      </NuxtLink>
-      <NuxtLink to="/usuario" v-if="userLogged">
-        <div class="btn-usuario" :style="{ backgroundImage: `url('${imagePath}')` }"></div>
-      </NuxtLink>
+      <div class="cart-sesion-group">
+        <NuxtLink to="/tienda">
+          <div class="btn-tienda-menu">
+            <img src="_nuxt/assets/img/cart.png" alt="Tienda">
+          </div>
+        </NuxtLink>
+        <NuxtLink to="/usuario" v-if="!userLogged">
+          <div class="btn-login-menu">Iniciar sesión</div>
+        </NuxtLink>
+        <NuxtLink to="/usuario" v-if="userLogged">
+          <div class="btn-usuario" :style="{ backgroundImage: `url('${imagePath}')` }"></div>
+        </NuxtLink>
+      </div>
     </div>
     <div class="mobile-menu-container">
       <div class="hamburger-menu" @click="showMenu()">
         <div class="bar" ref="bar"></div>
       </div>
-      <NuxtLink to="/usuario" v-if="!userLogged">
-        <div class="btn-login-menu">Iniciar sesión</div>
-      </NuxtLink>
-      <NuxtLink to="/usuario" v-if="userLogged">
-        <div class="btn-usuario" :style="{ backgroundImage: `url('${imagePath}')` }"></div>
-      </NuxtLink>
+      <div class="cart-sesion-group">
+        <NuxtLink to="/tienda">
+          <div class="btn-tienda-menu">
+            <img src="_nuxt/assets/img/cart.png" alt="Tienda">
+          </div>
+        </NuxtLink>
+        <NuxtLink to="/usuario" v-if="!userLogged">
+          <div class="btn-login-menu">Iniciar sesión</div>
+        </NuxtLink>
+        <NuxtLink to="/usuario" v-if="userLogged">
+          <div class="btn-usuario" :style="{ backgroundImage: `url('${imagePath}')` }"></div>
+        </NuxtLink>
+      </div>
     </div>
     <div :class="mobileMenuClass">
       <NuxtLink to="/">
@@ -199,6 +213,7 @@ a {
 
 .menu-item {
   padding: 7px;
+  font-size: 14px;
 }
 
 .menu-item:hover {
@@ -208,6 +223,7 @@ a {
 
 .active-menu-item {
   padding: 7px;
+  font-size: 14px;
   border-bottom: 1px solid transparent;
   border-image: linear-gradient(0.25turn, rgb(138, 17, 219), rgb(39, 216, 223), rgb(53, 230, 171));
   border-image-slice: 1;
@@ -217,6 +233,7 @@ a {
   width: fit-content;
   margin: 0 auto;
   padding: 7px;
+  font-size: 14px;
   text-align: center;
   margin-top: 10px;
 }
@@ -265,6 +282,28 @@ a {
 
 .mobile-items-container-hide {
   display: none;
+}
+
+.btn-tienda-menu {
+  border-radius: 5px;
+  padding: 5px 5px 0px 5px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.btn-tienda-menu:hover {
+  background-color: #444654;
+}
+
+.btn-tienda-menu img {
+  width: 25px;
+}
+
+.cart-sesion-group {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: nowrap;
 }
 
 @media (max-width: 950px) {

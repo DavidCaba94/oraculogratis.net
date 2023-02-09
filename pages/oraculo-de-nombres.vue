@@ -109,6 +109,8 @@ export default {
         this.nombreUnoMostrar = structuredClone(this.nombreUno);
         this.nombreDosMostrar = structuredClone(this.nombreDos);
         this.mostrarNombres = true;
+        this.nombreUno = null;
+        this.nombreDos = null;
       } else {
         this.errorLog = true;
       }
@@ -146,6 +148,9 @@ h2 {
   margin-top: 20px;
   text-align: center;
   padding: 10px;
+  background-color: #444654;
+  border-radius: 5px;
+  margin-bottom: 30px;
 }
 
 .texto {
@@ -208,6 +213,10 @@ h2 {
   margin-bottom: 10px;
   text-align: center;
   font-size: 20px;
+  background-color: #444654;
+  border-radius: 5px;
+  margin-bottom: 30px;
+  padding: 10px;
 }
 
 .porcentaje-nombres {

@@ -4,7 +4,7 @@
     <h1>Oráculo Si o No</h1>
     <p class="texto">Este es el <strong>oráculo del si o no gratis</strong> más <strong>fiable</strong> de internet. Haz tus preguntas y el oráculo del si o no te responderá con <strong>total precisión</strong>. Puedes hacer todas las preguntas que quieras de manera totalmente gratuita.</p>
     <div class="box-oraculo">
-      <p class="preguntas-totales">Respuestas del oráculo: {{totalResponses}}</p>
+      <!--<p class="preguntas-totales">Respuestas del oráculo: {{totalResponses}}</p>-->
       <div class="area-respuesta">
         <div class="respuesta" v-if="!loadingRespuesta">{{respuesta}}</div>
         <div class="lds-ellipsis" v-if="loadingRespuesta"><div></div><div></div><div></div><div></div></div>
@@ -188,6 +188,9 @@ h2 {
   margin-bottom: 20px;
   padding: 10px;
   text-align: center;
+  background-color: #444654;
+  border-radius: 5px;
+  padding-top: 20px;
 }
 
 .label-input {

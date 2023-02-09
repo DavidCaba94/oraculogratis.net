@@ -3,8 +3,11 @@
     <Menu/>
     <h1>Tienda</h1>
     <p class="texto">Consigues un punto por cada uso que haces de cualquiera de nuestros oráculos. Estos puntos los puedes canjear por lo que quieras de la siguiente lista</p>
-    <div v-if="!userLogged" class="box-no-logged">
+    <div v-if="!userLogged" class="box-no-logged-tienda">
       <p>Inicia sesión para ver la lista de productos que puedes canjear con tus puntos</p>
+      <NuxtLink to="/usuario">
+        <div class="btn-login">Iniciar sesión</div>
+      </NuxtLink>
     </div>
     <div class="box-productos" v-if="userLogged">
       <div class="box-puntos-tienda">
@@ -113,9 +116,10 @@ p {
   text-align: center;
 }
 
-.box-no-logged {
+.box-no-logged-tienda {
   max-width: 500px;
   margin: 0 auto;
+  margin-top: 20px;
   margin-bottom: 10px;
   padding: 10px;
   border: 1px solid transparent;

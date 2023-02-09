@@ -22,7 +22,7 @@
       <div class="cart-sesion-group">
         <NuxtLink to="/tienda">
           <div class="btn-tienda-menu">
-            <img src="_nuxt/assets/img/cart.png" alt="Tienda">
+            <img src="../assets/img/cart.png" alt="Tienda">
           </div>
         </NuxtLink>
         <NuxtLink to="/usuario" v-if="!userLogged">
@@ -40,7 +40,7 @@
       <div class="cart-sesion-group">
         <NuxtLink to="/tienda">
           <div class="btn-tienda-menu">
-            <img src="_nuxt/assets/img/cart.png" alt="Tienda">
+            <img src="../assets/img/cart.png" alt="Tienda">
           </div>
         </NuxtLink>
         <NuxtLink to="/usuario" v-if="!userLogged">

@@ -7,6 +7,9 @@
       <NuxtLink to="/oraculo-si-o-no">
         <div :class="getActiveMenuItem('oraculo-si-o-no')">Oráculo si o no</div>
       </NuxtLink>
+      <NuxtLink to="/oraculo-de-cartas">
+        <div :class="getActiveMenuItem('oraculo-de-cartas')">Oráculo de cartas</div>
+      </NuxtLink>
       <NuxtLink to="/oraculo-del-amor">
         <div :class="getActiveMenuItem('oraculo-del-amor')">Oráculo del amor</div>
       </NuxtLink>
@@ -15,9 +18,6 @@
       </NuxtLink>
       <NuxtLink to="/oraculo-de-signos">
         <div :class="getActiveMenuItem('oraculo-de-signos')">Oráculo de signos</div>
-      </NuxtLink>
-      <NuxtLink to="/oraculo-de-cartas">
-        <div :class="getActiveMenuItem('oraculo-de-cartas')">Oráculo de cartas</div>
       </NuxtLink>
       <div class="cart-sesion-group">
         <NuxtLink to="/tienda">
@@ -58,6 +58,9 @@
       <NuxtLink to="/oraculo-si-o-no">
         <div :class="getActiveMobileMenuItem('oraculo-si-o-no')">Oráculo si o no</div>
       </NuxtLink>
+      <NuxtLink to="/oraculo-de-cartas">
+        <div :class="getActiveMobileMenuItem('oraculo-de-cartas')">Oráculo de cartas</div>
+      </NuxtLink>
       <NuxtLink to="/oraculo-del-amor">
         <div :class="getActiveMobileMenuItem('oraculo-del-amor')">Oráculo del amor</div>
       </NuxtLink>
@@ -66,9 +69,6 @@
       </NuxtLink>
       <NuxtLink to="/oraculo-de-signos">
         <div :class="getActiveMobileMenuItem('oraculo-de-signos')">Oráculo de signos</div>
-      </NuxtLink>
-      <NuxtLink to="/oraculo-de-cartas">
-        <div :class="getActiveMobileMenuItem('oraculo-de-cartas')">Oráculo de cartas</div>
       </NuxtLink>
     </div>
   </div>

@@ -11,6 +11,13 @@
       </NuxtLink>
     </div>
     <div class="card-index">
+      <h2>Oráculo de cartas</h2>
+      <p class="texto">¿Estás buscando una perspectiva más profunda sobre tu vida y tu futuro? ¿Quieres conocer las respuestas que te brinda el universo? Entonces, nuestro Oráculo de Cartas es justo lo que necesitas. Con una consulta, descubrirás las claves de tu futuro y encontrarás las respuestas que estás buscando para tomar decisiones informadas y vivir una vida plena y satisfactoria.</p>
+      <NuxtLink to="/oraculo-de-cartas">
+      <div class="btn-link cartas">Probar</div>
+      </NuxtLink>
+    </div>
+    <div class="card-index">
       <h2>Oráculo del amor</h2>
       <p class="texto">¿Estás buscando respuestas sobre el amor y las relaciones? ¿Quieres conocer tu futuro sentimental? Entonces, nuestro Oráculo del Amor es justo lo que necesitas. Con una consulta, descubrirás los secretos del amor y encontrarás las respuestas que estás buscando para tener una relación feliz y satisfactoria.</p>
       <NuxtLink to="/oraculo-del-amor">
@@ -29,13 +36,6 @@
       <p class="texto">¿Estás buscando comprender mejor tu personalidad y tu camino en la vida? ¿Quieres conocer tus fortalezas y debilidades? Entonces, nuestro Oráculo de Signos es justo lo que necesitas. Con una consulta, descubrirás las claves de tu personalidad y encontrarás las respuestas que estás buscando para tener una vida más plena y satisfactoria.</p>
       <NuxtLink to="/oraculo-de-signos">
       <div class="btn-link signos">Probar</div>
-      </NuxtLink>
-    </div>
-    <div class="card-index">
-      <h2>Oráculo de cartas</h2>
-      <p class="texto">¿Estás buscando una perspectiva más profunda sobre tu vida y tu futuro? ¿Quieres conocer las respuestas que te brinda el universo? Entonces, nuestro Oráculo de Cartas es justo lo que necesitas. Con una consulta, descubrirás las claves de tu futuro y encontrarás las respuestas que estás buscando para tomar decisiones informadas y vivir una vida plena y satisfactoria.</p>
-      <NuxtLink to="/oraculo-de-cartas">
-      <div class="btn-link cartas">Probar</div>
       </NuxtLink>
     </div>
     <Footer/>
@@ -118,19 +118,19 @@ h2 {
   border: 1px solid #665add;
 }
 
-.btn-link.amor {
+.btn-link.cartas {
   border: 1px solid #4d8ede;
 }
 
-.btn-link.nombres {
+.btn-link.amor {
   border: 1px solid #28d9dc;
 }
 
-.btn-link.signos {
+.btn-link.nombres {
   border: 1px solid #30e1bf;
 }
 
-.btn-link.cartas {
+.btn-link.signos {
   border: 1px solid #35e6ab;
 }
 </style>

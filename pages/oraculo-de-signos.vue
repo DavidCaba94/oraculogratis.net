@@ -86,6 +86,7 @@
       <div class="btn-oraculo" @click="calcularCompatibilidad()">Calcular</div>
     </div>
     <div class="signos-resultado" v-if="mostrarSignos">
+      <div>Compatibilidad de</div>
       <div>{{signoUno}} y {{signoDos}}</div>
       <div class="porcentaje-signos">{{resultado}}%</div>
     </div>

@@ -2,7 +2,7 @@
   <div>
     <Menu/>
     <h1>Oráculo de Nombres</h1>
-    <p class="texto">Con el Oráculo de Nombres podrás calcular de forma <strong>gratis, inmediata y fiable</strong> el porcentaje de <strong>compatibilidad entre tu pareja y tu</strong>. Es tan simple como escribir tu nombre y el suyo y ver qué resultado te proporciona nuestro oráculo.</p>
+    <p class="texto">Con el Oráculo de Nombres podrás calcular de forma <strong>totalmente gratis, inmediata y fiable</strong> el porcentaje de <strong>compatibilidad entre tu pareja y tu</strong>. Es tan simple como escribir tu nombre y el suyo y ver qué resultado te proporciona nuestro oráculo.</p>
     <div class="box-nombres">
       <p class="label-input">TU NOMBRE</p>
       <input type="text" class="input-oraculo" v-model="nombreUno" placeholder="Tu nombre">
@@ -50,7 +50,7 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: 'El oráculo de nombres gratis más fiable de internet.'
+        content: 'Con el Oráculo de Nombres podrás calcular de forma totalmente gratis, inmediata y fiable el porcentaje de compatibilidad entre tu pareja y tu. Es tan simple como escribir tu nombre y el suyo y ver qué resultado te proporciona nuestro oráculo.'
       }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/icon.ico' }]

@@ -14,7 +14,45 @@
         <img src="../assets/img/coin.png" alt="Puntos" class="moneda">
         <div class="puntos-totales">{{puntos}}</div>
       </div>
+      <div class="product-card">
+        <p>Lectura personailzada de tu signo del zodiaco enviada individualmente por email</p>
+        <NuxtLink to="/productos/lectura-zodiaco">
+          <div class="btn-compra">
+            <img src="../assets/img/coin.png" alt="Puntos" class="moneda">
+            200
+          </div>
+        </NuxtLink>
+      </div>
+      <div class="product-card">
+        <p>Lectura personailzada de tu signo del zodiaco por email</p>
+        <div class="btn-compra">
+          <img src="../assets/img/coin.png" alt="Puntos" class="moneda">
+          200
+        </div>
+      </div>
+      <div class="product-card">
+        <p>Lectura personailzada de tu signo del zodiaco por email</p>
+        <div class="btn-compra">
+          <img src="../assets/img/coin.png" alt="Puntos" class="moneda">
+          200
+        </div>
+      </div>
+      <div class="product-card">
+        <p>Lectura personailzada de tu signo del zodiaco por email</p>
+        <div class="btn-compra">
+          <img src="../assets/img/coin.png" alt="Puntos" class="moneda">
+          200
+        </div>
+      </div>
+      <div class="product-card">
+        <p>Lectura personailzada de tu signo del zodiaco por email</p>
+        <div class="btn-compra">
+          <img src="../assets/img/coin.png" alt="Puntos" class="moneda">
+          200
+        </div>
+      </div>
     </div>
+    <Footer/>
   </div>
 </template>
 
@@ -140,8 +178,7 @@ p {
   align-items: center;
   justify-content: flex-end;
   flex-wrap: nowrap;
-  width: 300px;
-  float: right;
+  width: 100%;
   margin-top: 20px;
   margin-bottom: 20px;
 }
@@ -150,5 +187,46 @@ p {
   width: 25px;
   height: 25px;
   margin-right: 5px;
+}
+
+.product-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: 20px;
+  text-align: center;
+  padding: 10px;
+  background-color: #444654;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.product-card p {
+  margin: 0;
+  text-align: left;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.btn-compra {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  min-width: 60px;
+  max-width: 60px;
+  padding: 7px;
+  border: 1px solid transparent;
+  border-image: linear-gradient(0.25turn, rgb(138, 17, 219), rgb(39, 216, 223), rgb(53, 230, 171));
+  border-image-slice: 1;
+  cursor: pointer;
+}
+
+.btn-compra img {
+  width: 20px;
+  height: 20px;
 }
 </style>

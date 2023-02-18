@@ -39,6 +39,8 @@ export default {
     '@nuxt/content',
     // https://go.nuxtjs.dev/sitemap
     '@nuxtjs/sitemap',
+    // https://go.nuxtjs.dev/gtm
+    ['@nuxtjs/google-tag-manager', { id: 'G-98YJ7DPL49' }]
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios

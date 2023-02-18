@@ -37,6 +37,8 @@ export default {
     '@nuxtjs/pwa',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
+    // https://go.nuxtjs.dev/sitemap
+    '@nuxtjs/sitemap',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -75,5 +77,72 @@ export default {
   build: {
   },
 
-  target: 'static'
+  target: 'static',
+  
+  sitemap: {
+    hostname: 'https://oraculogratis.net',
+    gzip: true,
+    routes: [
+      {
+        url: '/',
+        changefreq: 'daily',
+        priority: 1,
+        lastmod: '2023-02-18T20:47:34+00:00'
+      },
+      {
+        url: '/oraculo-si-o-no',
+        changefreq: 'daily',
+        priority: 0.8,
+        lastmod: '2023-02-18T20:47:34+00:00'
+      },
+      {
+        url: '/oraculo-de-cartas',
+        changefreq: 'daily',
+        priority: 0.8,
+        lastmod: '2023-02-18T20:47:34+00:00'
+      },
+      {
+        url: '/oraculo-del-amor',
+        changefreq: 'daily',
+        priority: 0.8,
+        lastmod: '2023-02-18T20:47:34+00:00'
+      },
+      {
+        url: '/oraculo-de-nombres',
+        changefreq: 'daily',
+        priority: 0.8,
+        lastmod: '2023-02-18T20:47:34+00:00'
+      },
+      {
+        url: '/oraculo-de-signos',
+        changefreq: 'daily',
+        priority: 0.8,
+        lastmod: '2023-02-18T20:47:34+00:00'
+      },
+      {
+        url: '/tienda',
+        changefreq: 'daily',
+        priority: 0.8,
+        lastmod: '2023-02-18T20:47:34+00:00'
+      },
+      {
+        url: '/usuario',
+        changefreq: 'daily',
+        priority: 0.8,
+        lastmod: '2023-02-18T20:47:34+00:00'
+      },
+      {
+        url: '/registro',
+        changefreq: 'daily',
+        priority: 0.64,
+        lastmod: '2023-02-18T20:47:34+00:00'
+      },
+      {
+        url: '/politica-de-privacidad',
+        changefreq: 'daily',
+        priority: 0.51,
+        lastmod: '2023-02-18T20:47:34+00:00'
+      }
+    ]
+  }
 }

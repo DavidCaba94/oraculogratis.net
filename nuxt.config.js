@@ -40,7 +40,9 @@ export default {
     // https://go.nuxtjs.dev/sitemap
     '@nuxtjs/sitemap',
     // https://go.nuxtjs.dev/gtm
-    ['@nuxtjs/google-tag-manager', { id: 'G-98YJ7DPL49' }]
+    ['@nuxtjs/google-tag-manager', { id: 'G-98YJ7DPL49' }],
+    // https://go.nuxtjs.dev/adsense
+    ['@nuxtjs/google-adsense', { id: 'ca-pub-1497368073837433' }]
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios

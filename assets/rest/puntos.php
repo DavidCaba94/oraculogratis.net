@@ -44,6 +44,11 @@ switch($opcion){
     $resultado = $conexion->prepare($consulta);
     $resultado->execute();                
     break;
+  case 4:
+    $consulta = "UPDATE puntos SET puntos=puntos-$puntos WHERE id_user='$id_user'";	
+    $resultado = $conexion->prepare($consulta);
+    $resultado->execute();                
+    break;
 }
 print json_encode($data, JSON_UNESCAPED_UNICODE);
 $conexion = NULL;

@@ -38,5 +38,18 @@ export default {
       }
     });
     return successUpdate;
+  },
+  async substractPointsToUser(id_user, puntos) {
+    let successUpdate = false;
+    await axios.post(url, {
+      opcion:4,
+      id_user: id_user,
+      puntos: puntos
+    }).then(response =>{
+      if(response.status == 200){
+        successUpdate = true;
+      }
+    });
+    return successUpdate;
   }
 }

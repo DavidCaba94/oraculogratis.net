@@ -23,34 +23,6 @@
           </div>
         </NuxtLink>
       </div>
-      <div class="product-card">
-        <p>Lectura personailzada de tu signo del zodiaco por email</p>
-        <div class="btn-compra">
-          <img src="../assets/img/coin.png" alt="Puntos" class="moneda">
-          200
-        </div>
-      </div>
-      <div class="product-card">
-        <p>Lectura personailzada de tu signo del zodiaco por email</p>
-        <div class="btn-compra">
-          <img src="../assets/img/coin.png" alt="Puntos" class="moneda">
-          200
-        </div>
-      </div>
-      <div class="product-card">
-        <p>Lectura personailzada de tu signo del zodiaco por email</p>
-        <div class="btn-compra">
-          <img src="../assets/img/coin.png" alt="Puntos" class="moneda">
-          200
-        </div>
-      </div>
-      <div class="product-card">
-        <p>Lectura personailzada de tu signo del zodiaco por email</p>
-        <div class="btn-compra">
-          <img src="../assets/img/coin.png" alt="Puntos" class="moneda">
-          200
-        </div>
-      </div>
     </div>
     <Footer/>
   </div>
@@ -88,7 +60,7 @@ export default {
         signo: null
       },
       userLogged: false,
-      puntos: 0,
+      puntos: 0
     }
   },
   mounted () {

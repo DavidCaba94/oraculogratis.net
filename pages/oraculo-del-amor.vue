@@ -160,7 +160,6 @@ export default {
   }
 }
 </script>
-<script async="async" data-cfasync="false" src="//pl19264369.highrevenuegate.com/81ce0b525d7df8ae99dd105203b8686f/invoke.js"></script>
 
 <style>
 body {

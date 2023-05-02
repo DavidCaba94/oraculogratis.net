@@ -17,6 +17,14 @@ export default {
   css: [
   ],
 
+  // Global JS: https://go.nuxtjs.dev/config-js
+  script: [
+    {
+      src: '//pl19264369.highrevenuegate.com/81ce0b525d7df8ae99dd105203b8686f/invoke.js',
+      async: 'async'
+    }
+  ],
+
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
   ],

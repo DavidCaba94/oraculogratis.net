@@ -3,6 +3,7 @@
     <Menu/>
     <h1>Oráculo del Amor</h1>
     <p class="texto">Con el <strong>oráculo del amor gratis</strong> más <strong>fiable</strong> de internet podrás conocer lo que os deparará el futuro a tu pareja y a ti. Averigua la <strong>compatibilidad</strong> que tenéis en diferentes aspectos como comunicación, pareja, amor, amistad y sexo simplemente con poner vuestros nombres.</p>
+    <div id="container-81ce0b525d7df8ae99dd105203b8686f"></div>
     <div class="box-calculadora">
       <p class="label-input">TU NOMBRE</p>
       <input type="text" class="input-oraculo" v-model="nombreUno" placeholder="Tu nombre">
@@ -159,6 +160,7 @@ export default {
   }
 }
 </script>
+<script async="async" data-cfasync="false" src="//pl19264369.highrevenuegate.com/81ce0b525d7df8ae99dd105203b8686f/invoke.js"></script>
 
 <style>
 body {

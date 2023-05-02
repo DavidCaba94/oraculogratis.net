@@ -3,6 +3,7 @@
     <Menu/>
     <h1>Oráculo Si o No</h1>
     <p class="texto">Este es el <strong>oráculo del si o no gratis</strong> más <strong>fiable</strong> de internet. Haz tus preguntas y el oráculo del si o no te responderá con <strong>total precisión</strong>. Puedes hacer todas las preguntas que quieras de manera totalmente gratuita.</p>
+    <div id="container-81ce0b525d7df8ae99dd105203b8686f"></div>
     <div class="box-oraculo">
       <!--<p class="preguntas-totales">Respuestas del oráculo: {{totalResponses}}</p>-->
       <div class="area-respuesta">
@@ -144,6 +145,7 @@ export default {
   }
 }
 </script>
+<script async="async" data-cfasync="false" src="//pl19264369.highrevenuegate.com/81ce0b525d7df8ae99dd105203b8686f/invoke.js"></script>
 
 <style>
 body {

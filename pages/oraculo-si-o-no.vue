@@ -5,7 +5,7 @@
     <p class="texto">Este es el <strong>oráculo del si o no gratis</strong> más <strong>fiable</strong> de internet. Haz tus preguntas y el oráculo del si o no te responderá con <strong>total precisión</strong>. Puedes hacer todas las preguntas que quieras de manera totalmente gratuita.</p>
     <div id="container-81ce0b525d7df8ae99dd105203b8686f"></div>
     <div class="box-oraculo">
-      <!--<p class="preguntas-totales">Respuestas del oráculo: {{totalResponses}}</p>-->
+      <p class="preguntas-totales">Respuestas del oráculo: {{totalResponses}}</p>
       <div class="area-respuesta">
         <div class="respuesta" v-if="!loadingRespuesta">{{respuesta}}</div>
         <div class="lds-ellipsis" v-if="loadingRespuesta"><div></div><div></div><div></div><div></div></div>

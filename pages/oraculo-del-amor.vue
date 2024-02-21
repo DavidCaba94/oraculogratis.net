@@ -2,8 +2,7 @@
   <div>
     <Menu/>
     <h1>Oráculo del Amor</h1>
-    <p class="texto">Con el <strong>oráculo del amor gratis</strong> más <strong>fiable</strong> de internet podrás conocer lo que os deparará el futuro a tu pareja y a ti. Averigua la <strong>compatibilidad</strong> que tenéis en diferentes aspectos como comunicación, pareja, amor, amistad y sexo simplemente con poner vuestros nombres.</p>
-    <div id="container-81ce0b525d7df8ae99dd105203b8686f"></div>
+    <p class="texto">¡Prepárate para desentrañar los secretos del amor con el <strong>Oráculo del Amor</strong>! Sumérgete en una experiencia única donde podrás explorar tu vida sentimental <strong>totalmente gratis</strong>. Nuestro oráculo te ofrece lecturas personalizadas y precisas que te guiarán en tu <strong>búsqueda del romance verdadero</strong>. No te pierdas la oportunidad de descubrir lo que el destino tiene reservado para ti en el amor, ¡pruébalo ahora y comienza tu viaje hacia la felicidad amorosa!</p>
     <div class="box-calculadora">
       <p class="label-input">TU NOMBRE</p>
       <input type="text" class="input-oraculo" v-model="nombreUno" placeholder="Tu nombre">
@@ -77,7 +76,7 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: 'Con el oráculo del amor gratis más fiable de internet podrás conocer lo que os deparará el futuro a tu pareja y a ti. Averigua la compatibilidad que tenéis en diferentes aspectos como comunicacion, pareja, amor, amistad y sexo simplemente con poner vuestros nombres.'
+        content: '¡Prepárate para desentrañar los secretos del amor con el Oráculo del Amor! Sumérgete en una experiencia única donde podrás explorar tu vida sentimental totalmente gratis. Nuestro oráculo te ofrece lecturas personalizadas y precisas que te guiarán en tu búsqueda del romance verdadero. No te pierdas la oportunidad de descubrir lo que el destino tiene reservado para ti en el amor, ¡pruébalo ahora y comienza tu viaje hacia la felicidad amorosa!'
       }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/icon.ico' }]

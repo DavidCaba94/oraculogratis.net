@@ -3,7 +3,6 @@
     <Menu/>
     <h1>Oráculo de Nombres</h1>
     <p class="texto">Con el Oráculo de Nombres podrás calcular de forma <strong>totalmente gratis, inmediata y fiable</strong> el porcentaje de <strong>compatibilidad entre tu pareja y tu</strong>. Es tan simple como escribir tu nombre y el suyo y ver qué resultado te proporciona nuestro oráculo.</p>
-    <div id="container-81ce0b525d7df8ae99dd105203b8686f"></div>
     <div class="box-nombres">
       <p class="label-input">TU NOMBRE</p>
       <input type="text" class="input-oraculo" v-model="nombreUno" placeholder="Tu nombre">

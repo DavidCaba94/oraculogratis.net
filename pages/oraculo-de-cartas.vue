@@ -3,7 +3,6 @@
     <Menu/>
     <h1>Oráculo de cartas</h1>
     <p class="texto">El oráculo de cartas responderá <strong>de forma gratuita, fiable y precisa</strong> a tu pregunta en función de las cartas que elijas. La forma de preguntar es muy <strong>sencilla</strong>, solo tienes que escribir tu pregunta, elegir 3 cartas y leer la respuesta del oráculo.</p>
-    <div id="container-81ce0b525d7df8ae99dd105203b8686f"></div>
     <div v-if="modoPregunta">
       <p class="label-input">ESCRIBE TU PREGUNTA</p>
       <div class="box-pregunta">

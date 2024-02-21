@@ -101,31 +101,31 @@ export default {
         url: '/oraculo-si-o-no',
         changefreq: 'daily',
         priority: 0.8,
-        lastmod: '2023-02-18T20:47:34+00:00'
+        lastmod: '2024-02-21T20:47:34+00:00'
       },
       {
         url: '/oraculo-de-cartas',
         changefreq: 'daily',
         priority: 0.8,
-        lastmod: '2023-02-18T20:47:34+00:00'
+        lastmod: '2024-02-21T20:47:34+00:00'
       },
       {
         url: '/oraculo-del-amor',
         changefreq: 'daily',
         priority: 0.8,
-        lastmod: '2023-02-18T20:47:34+00:00'
+        lastmod: '2024-02-21T20:47:34+00:00'
       },
       {
         url: '/oraculo-de-nombres',
         changefreq: 'daily',
         priority: 0.8,
-        lastmod: '2023-02-18T20:47:34+00:00'
+        lastmod: '2024-02-21T20:47:34+00:00'
       },
       {
         url: '/oraculo-de-signos',
         changefreq: 'daily',
         priority: 0.8,
-        lastmod: '2023-02-18T20:47:34+00:00'
+        lastmod: '2024-02-21T20:47:34+00:00'
       },
       {
         url: '/tienda',
